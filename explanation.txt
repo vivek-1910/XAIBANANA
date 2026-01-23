@@ -1,0 +1,13 @@
+
+--- Prediction Explanation ---
+The model predicts 'disease' for this patient because the combined effect of their health metrics
+results in a positive log-odds score (which corresponds to a probability of 73.48%, which is > 50%).
+
+- Age: 0.0778 (Increases risk)
+- BMI: 0.2180 (Increases risk)
+- Systolic BP: 0.2353 (Increases risk)
+
+Specifically, the feature 'systolic_bp' is the strongest driver for this prediction,
+contributing 0.24 to the risk score.
+
+All features for this patient are contributing positively to the disease risk.
