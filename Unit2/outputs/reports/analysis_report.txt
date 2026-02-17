@@ -1,0 +1,106 @@
+
+================================================================================
+                   UNIT 2 - EXPLAINABLE AI ANALYSIS REPORT
+                  Global Feature Effect Exploration Study
+================================================================================
+
+EXECUTIVE SUMMARY
+This analysis implements and compares three interpretability techniques
+(PDP, ICE, ALE) on a Breast Cancer classification model to understand feature-level
+decision boundaries and model behavior.
+
+1. DATASET CHARACTERISTICS
+   Dataset Name: Breast Cancer (scikit-learn)
+   Total Samples: 569
+   Total Features: 30
+   Training Set: 455 samples
+   Test Set: 114 samples
+
+2. MODEL PERFORMANCE METRICS
+
+   Random Forest Classifier:
+   - Training Accuracy: 1.0000
+   - Test Accuracy: 0.9649
+
+   Gradient Boosting Classifier:
+   - Training Accuracy: 1.0000
+   - Test Accuracy: 0.9649
+
+3. SELECTED FEATURES FOR ANALYSIS
+   - Primary Features (by importance): ['worst area', 'worst concave points']
+   - Secondary Feature: mean radius
+
+4. INTERPRETABILITY METHODS IMPLEMENTED
+
+   a) Partial Dependence Plot (PDP)
+      Shows the marginal effect of one or more features on predictions
+
+   b) Individual Conditional Expectation (ICE)
+      Displays individual sample-level predictions to reveal heterogeneity
+
+   c) Accumulated Local Effects (ALE)
+      Provides unbiased feature effects handling feature correlations
+
+5. EXPERIMENT FINDINGS
+
+   Experiment 5a - Feature Correlation Analysis:
+   - Analyzed Pair: mean radius & mean perimeter
+   - Correlation Coefficient: 0.9979
+
+   Key Insight: PDP plots may be misleading for highly correlated features.
+   ALE plots provide more reliable interpretation by accounting for 
+   the data distribution of feature interactions.
+
+   Experiment 5b - Subgroup Behavior Analysis:
+   - Heterogeneity Observation: ICE curves reveal varying treatment effects
+   - Standard Deviation Range: 0.3439 to 0.3800 across features
+
+   Key Insight: The model exhibits significant within-group heterogeneity.
+   Different samples respond differently to feature changes, suggesting
+   the model learns non-uniform decision boundaries.
+
+   Experiment 5c - Model Architecture Impact:
+   - Model 1: Random Forest (100 trees, max_depth=15)
+   - Model 2: Gradient Boosting (100 trees, max_depth=5)
+
+   Key Insight: Different ensemble architectures produce varying PDP shapes,
+   indicating model-specific feature dependency patterns.
+
+6. OUTPUT ARTIFACTS
+
+   Visualizations (outputs/visualizations/):
+   - feature_importance.png: Top 10 feature rankings
+   - pdp_plots.png: Partial dependence for primary features
+   - ice_plots.png: Individual conditional expectations
+   - ale_plots_pyale.png: ALE using PyALE library
+   - ale_plots_custom.png: ALE using custom implementation
+   - correlation_effect_analysis.png: PDP vs ALE comparison
+   - subgroup_behaviour.png: ICE heterogeneity analysis
+   - model_comparison.png: Multi-model PDP comparison
+
+7. TECHNICAL CONCLUSIONS
+
+   a) Pros and Cons of Each Method:
+
+      PDP: Efficient, easily interpretable but biased by correlation
+      ICE: Reveals heterogeneity, prone to overplotting with many samples
+      ALE: Handles correlations well, more complex to interpret
+
+   b) Recommendations:
+
+      - Use PDP for quick global understanding
+      - Use ALE when features are correlated
+      - Use ICE to detect significant subgroup behavior patterns
+      - Combine all three for comprehensive analysis
+
+8. KEY RECOMMENDATIONS
+
+   1. Incorporate feature correlation analysis in model interpretation
+   2. Always visualize subgroup heterogeneity via ICE curves
+   3. Use ALE for models with correlated features
+   4. Compare multiple models to validate feature relationships
+   5. Document all interpretation findings for regulatory compliance
+
+================================================================================
+                          Analysis Status: Complete
+================================================================================
