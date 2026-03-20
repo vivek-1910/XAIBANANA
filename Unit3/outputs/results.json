@@ -1,0 +1,30 @@
+{
+  "image_path": "/Users/vivekgowdas/Downloads/realistic-3d-cartoon-banana-peeling-icon_23-2152015160.jpg.avif",
+  "banana_probability": 0.4283469617366791,
+  "top_predictions": [
+    {
+      "label": "banana",
+      "probability": 0.4283469617366791
+    },
+    {
+      "label": "cup",
+      "probability": 0.12008722126483917
+    },
+    {
+      "label": "hair slide",
+      "probability": 0.05852639675140381
+    },
+    {
+      "label": "lipstick",
+      "probability": 0.03435182943940163
+    },
+    {
+      "label": "nipple",
+      "probability": 0.02970907650887966
+    }
+  ],
+  "saliency_target_logit": 10.927558898925781,
+  "activation_max_target_logit": 86.84308624267578,
+  "task1_interpretation": "The saliency map mainly emphasizes object boundaries and contour-like regions. Some noisy background response is still visible, which is expected with vanilla gradients.",
+  "task2_interpretation": "Activation maximization produces a smooth yellow curved pattern instead of a realistic banana photo. This shows the pretrained CNN relies strongly on banana-like textures and curved shape cues."
+}

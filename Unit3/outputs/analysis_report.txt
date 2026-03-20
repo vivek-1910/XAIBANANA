@@ -1,0 +1,15 @@
+Unit 3 - Banana Problem (Odd SRN)
+Input image: /Users/vivekgowdas/Downloads/realistic-3d-cartoon-banana-peeling-icon_23-2152015160.jpg.avif
+Banana probability: 0.4283
+Top predictions:
+- banana: 0.4283
+- cup: 0.1201
+- hair slide: 0.0585
+- lipstick: 0.0344
+- nipple: 0.0297
+
+Task 1 Interpretation:
+The saliency map mainly emphasizes object boundaries and contour-like regions. Some noisy background response is still visible, which is expected with vanilla gradients.
+
+Task 2 Interpretation:
+Activation maximization produces a smooth yellow curved pattern instead of a realistic banana photo. This shows the pretrained CNN relies strongly on banana-like textures and curved shape cues.
