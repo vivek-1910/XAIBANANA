@@ -1,0 +1,23 @@
+{
+    "accuracy": 0.6,
+    "patient_id": 266,
+    "patient_data": {
+        "age": 53.0,
+        "bmi": 29.7,
+        "systolic_bp": 145.4
+    },
+    "actual_label": "Disease",
+    "predicted_probability": 0.734779865506406,
+    "features": [
+        "age",
+        "bmi",
+        "systolic_bp"
+    ],
+    "contributions": [
+        0.07784722409972804,
+        0.21802206577808442,
+        0.2352949686978928
+    ],
+    "bias": 0.48784651571353344,
+    "interpretation": "\n--- Prediction Explanation ---\nThe model predicts 'disease' for this patient (ID #266) because the combined effect of their health metrics\nresults in a positive log-odds score (corresponding to a probability of 73.48%, which is > 50%).\n\n- Age (contribution): 0.0778 (Increases risk)\n- BMI (contribution): 0.2180 (Increases risk)\n- Systolic BP (contribution): 0.2353 (Increases risk)\n- Intercept/Bias: 0.4878\n\nSpecifically, the feature 'systolic_bp' is the strongest driver for this prediction,\ncontributing 0.24 to the risk score.\n\nAll features for this patient are contributing positively to the disease risk."
+}
